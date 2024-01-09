@@ -1,0 +1,66 @@
+.my__urls{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+    color: #fff;
+
+    .my__urls__list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 80vw;
+        .my__urls__item{
+            display: grid;
+            grid-template-columns: 3fr 2fr 1fr 1fr;
+            gap: 3rem;
+            width: 100%;
+            padding: 1rem;
+            background-color: rgba($color: #000000, $alpha: .5);
+            transition: all 0.2s ease-in-out;
+            border: 1px solid #fff;
+            .my__urls__item__original{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .my__urls__item__short{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                button{
+                    padding: 0.5rem;
+                    border-radius: 0.5rem;
+                    background-color: #1a1a1a;
+                    color: #fff;
+                    border: 1px solid #fff;
+                    transition: all 0.2s ease-in-out;
+                    &:hover{
+                        background-color: #fff;
+                        color: #000;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .my__urls__item__visits{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .my__urls__item__status{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
