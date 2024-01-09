@@ -18,7 +18,7 @@ function App() {
   const [urls, setUrls] = useState(null)
   const getProfile = async () => {
     const res = await axios.get(
-      'http://localhost:8000/user/profile',
+      'https://url-shortner-isug.onrender.com/user/profile',
        {
         headers: {
           'Authorization': `Bearer ${user.token}`

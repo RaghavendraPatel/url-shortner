@@ -18,7 +18,7 @@ const Home = ({user}) => {
         try{
 
             const res = await axios.post(
-                'http://localhost:8000/create', 
+                'https://url-shortner-isug.onrender.com/create', 
                 {url},
                 {
                     headers: {   

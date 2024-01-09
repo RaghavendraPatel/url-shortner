@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import './MyUrls.scss'
 
 const MyUrls = ({urls}) => {
-    const base_url = 'http://localhost:8000/'
+    const base_url = 'https://url-shortner-isug.onrender.com/'
     const copy = (url) => {
         navigator.clipboard.writeText(url);
     }

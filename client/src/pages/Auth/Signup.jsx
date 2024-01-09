@@ -16,7 +16,7 @@ const Signup = () => {
         }
         try{
             const res = await axios.post(
-                'http://localhost:8000/user/signup',
+                'https://url-shortner-isug.onrender.com/user/signup',
                 {email,password},
                 {
                     headers: {
