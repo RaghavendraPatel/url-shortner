@@ -12,7 +12,7 @@ const md5 = require('md5')
 
 const cors = require('cors');
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: process.env.CORS_ORIGIN,
     credentials: true,
     optionSuccessStatus: 200
 }
