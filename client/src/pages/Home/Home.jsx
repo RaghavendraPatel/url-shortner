@@ -10,7 +10,6 @@ const Home = ({user}) => {
         console.log(user);
     }, [user]);
     const shortenUrl = async () => {
-        console.log(user);
         if(!user) {
             toast.error('Please login to shorten url');
             return;
@@ -28,6 +27,7 @@ const Home = ({user}) => {
                     }
                 }
             );
+            console.log(res.data);
             setShortUrl(res.data.shorten_url);
             setShowShortenUrl(true);
         }catch(err){

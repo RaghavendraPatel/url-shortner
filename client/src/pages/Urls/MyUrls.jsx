@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import './MyUrls.scss'
 
 const MyUrls = ({urls}) => {
+    const base_url = 'http://localhost:8000/'
     const copy = (url) => {
         navigator.clipboard.writeText(url);
     }
@@ -34,8 +35,8 @@ const MyUrls = ({urls}) => {
                                 <p>{url.original_url}</p>
                             </div>
                             <div className="my__urls__item__short">
-                                <p>{url.short_url}</p>
-                                <button onClick={()=>{copy(url.short_url)}}>Copy</button>
+                                <p>{`${base_url}${url.short_url}`}</p>
+                                <button onClick={()=>{copy(`${base_url}${url.short_url}`)}}>Copy</button>
                             </div>
                             <div className="my__urls__item__status">
                                 {url.expired? <p>Expired</p>:<p>Active</p>}

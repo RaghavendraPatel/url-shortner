@@ -10,6 +10,7 @@ import Signin from './pages/Auth/Signin';
 import MyUrls from './pages/Urls/MyUrls';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Signup from './pages/Auth/Signup';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -61,7 +62,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home user={user}/>} />
           <Route path="/signin" element={<Signin props = {{user,setUser}}/>} />
-          <Route path="/signup" element={<h1>Sign Up</h1>} />
+          <Route path="/signup" element={<Signup/>} />
           <Route path='/urls' element={<MyUrls urls={urls}/>} />
         </Routes>
     </div>

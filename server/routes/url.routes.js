@@ -18,9 +18,9 @@ router.get('/:short_url', async (req, res) => {
         const now = new Date();
         const time = now.getTime();
         const createdAt = url.createdAt.getTime();
-        console.log(time - createdAt);
+        console.log('diff',time - createdAt);
 
-        if(time - createdAt > 1800000){
+        if(time - createdAt > 172800){
             url.expired = true;
             await url.save();
             return res.json({ message: 'URL Expired' });

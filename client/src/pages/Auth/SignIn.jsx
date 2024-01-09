@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-const Sign = (props) => {
+const SignIn = (props) => {
     const navigate = useNavigate();
     const {user,setUser} = props.props;
     useEffect(() => {
@@ -46,7 +46,7 @@ const Sign = (props) => {
         }
     }
     return (
-        <div className="SignIn">
+        <div className="SignIn auth">
             <div className="container">
                 <div className="header">
                     <h1>Sign In</h1>
@@ -55,7 +55,10 @@ const Sign = (props) => {
                     <form onSubmit={handleSubmit}>
                         <input type="text" placeholder="Enter email" id="email"/>
                         <input type="password" placeholder="Enter password" id="password"/>
-                        <input type="checkbox" name="" id="remember" />
+                        <div className="remember">
+                            <input type="checkbox" name="" id="remember" />
+                            <label htmlFor="remember">Remember me</label>
+                        </div>
                         <button >Sign In</button>
                     </form>
                 </div>
@@ -64,4 +67,4 @@ const Sign = (props) => {
     );
 }
 
-export default Sign;
+export default SignIn;
