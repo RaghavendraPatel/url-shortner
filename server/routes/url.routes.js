@@ -57,7 +57,7 @@ router.post('/create', passport.authenticate('jwt',{session:false}), async (req,
     user.total_urls++;
     await user.save();
     return res.json({ 
-        shorten_url: `http://localhost:8000/${newUrl.short_url}`,
+        shorten_url: `https://url-shortner-isug.onrender.com/${newUrl.short_url}`,
         original_url: newUrl.original_url,
         message: 'URL shortened successfully'
     });

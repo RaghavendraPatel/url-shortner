@@ -35,8 +35,8 @@ const MyUrls = ({urls}) => {
                                 <p>{url.original_url}</p>
                             </div>
                             <div className="my__urls__item__short">
-                                <p>{`${base_url}${url.short_url}`}</p>
-                                <button onClick={()=>{copy(`${base_url}${url.short_url}`)}}>Copy</button>
+                                <p>{`https://url-shortner-isug.onrender.com/}${url.short_url}`}</p>
+                                <button onClick={()=>{copy(`https://url-shortner-isug.onrender.com/${url.short_url}`)}}>Copy</button>
                             </div>
                             <div className="my__urls__item__status">
                                 {url.expired? <p>Expired</p>:<p>Active</p>}
