@@ -8,27 +8,11 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
 import Signin from './pages/Auth/Signin';
 import MyUrls from './pages/Urls/MyUrls';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Signup from './pages/Auth/Signup';
 
 function App() {
   const [user, setUser] = useState(null)
-  const [profile, setProfile] = useState(null)
-  const [urls, setUrls] = useState(null)
-  const getProfile = async () => {
-    const res = await axios.get(
-      'https://url-shortner-isug.onrender.com/user/profile',
-       {
-        headers: {
-          'Authorization': `Bearer ${user.token}`
-        }
-       }
-    )
-    console.log(res.data);
-    setProfile(res.data);
-    setUrls(res.data.urls);
-  }
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     if(user){
@@ -37,12 +21,6 @@ function App() {
     }
   }, [])
 
-  useEffect(() => {
-    if(user){
-      getProfile();
-    }
-  }
-  , [user])
 
   return (
     <div className="App">
@@ -63,7 +41,7 @@ function App() {
           <Route path="/" element={<Home user={user}/>} />
           <Route path="/signin" element={<Signin props = {{user,setUser}}/>} />
           <Route path="/signup" element={<Signup/>} />
-          <Route path='/urls' element={<MyUrls urls={urls}/>} />
+          <Route path='/urls' element={<MyUrls user={user}/>} />
         </Routes>
     </div>
   )
